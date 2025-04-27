@@ -6,3 +6,8 @@ phases:
     commands:
       - echo Installing dependencies...
       - npm install
+      
+artifacts:
+  files:
+    - '**/*'  # Include all files in the repository
+  base-directory: 'app-tier'  # This should be the directory with the app code
