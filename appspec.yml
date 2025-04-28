@@ -8,7 +8,9 @@ hooks:
   BeforeInstall:
     - location: scripts/stop_app.sh
       runas: ec2-user
-
+  AfterInstall:
+    - location: scripts/install_dependencies.sh
+      runas: ec2-user
   ApplicationStart:
     - location: scripts/start_app.sh
       runas: ec2-user

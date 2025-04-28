@@ -1,3 +1,6 @@
 #!/bin/bash
-cd /home/ec2-user/app-tier
+
+su - ec2-user <<'EOF'
+cd ~/app-tier
 npm install
+EOF

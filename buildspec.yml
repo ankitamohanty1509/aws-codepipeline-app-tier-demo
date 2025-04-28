@@ -4,14 +4,15 @@ phases:
   install:
     runtime-versions:
       nodejs: 16
+  pre_build:
     commands:
-      - echo Moving into app directory
-      - cd app-tier
-      - npm install
-
+      - echo Installing source dependencies...
+  build:
+    commands:
+      - echo Build phase skipped
 artifacts:
   files:
-    - app-tier/**/*  # Package everything inside app-tier folder
-    - appspec.yml    # Also include appspec.yml because CodeDeploy needs it
-    - scripts/***    # If you have scripts (install_dependencies.sh, start_app.sh)
-  discard-paths: no
+    - appspec.yml
+    - scripts/**
+    - app-tier/**
+   discard-paths: no
