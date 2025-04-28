@@ -1,12 +1,10 @@
 version: 0.0
 os: linux
 files:
-  - source: /      # Path to your application code from the build artifact
-    destination: /home/ec2-user/app-tier  # Where to place it on the EC2 instance
+  - source: /app-tier
+    destination: /home/ec2-user/app-tier
+
 hooks:
-  AfterInstall:
-    - location: scripts/install_dependencies.sh
-      runas: ec2-user
   ApplicationStart:
     - location: scripts/start_app.sh
       runas: ec2-user
