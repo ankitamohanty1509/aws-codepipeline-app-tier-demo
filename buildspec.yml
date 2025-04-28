@@ -10,9 +10,10 @@ phases:
   build:
     commands:
       - echo Build phase skipped
+
 artifacts:
   files:
     - appspec.yml
     - scripts/**
     - app-tier/**
-   discard-paths: no
+  discard-paths: no
