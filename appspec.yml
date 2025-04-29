@@ -4,6 +4,7 @@ os: linux
 files:
   - source: app-tier/
     destination: /home/ec2-user/app-tier
+    overwrite: true
 
 permissions:
   - object: /home/ec2-user/app-tier
