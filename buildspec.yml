@@ -10,6 +10,10 @@ phases:
   build:
     commands:
       - echo Build phase skipped
+      - chmod +x scripts/
+      - chmod +x scripts/start_app.sh
+      - chmod +x scripts/install_dependencies.sh
+      - chmod +x scripts/stop_app.sh
 
 artifacts:
   files:
