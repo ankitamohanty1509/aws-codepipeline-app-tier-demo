@@ -10,12 +10,3 @@ permissions:
     pattern: "**"
     owner: ec2-user
     group: ec2-user
-
-hooks:
-  AfterInstall:
-    - location: scripts/install_dependencies.sh
-      runas: ec2-user
-
-  ApplicationStart:
-    - location: scripts/start_app.sh
-      runas: ec2-user
