@@ -1,7 +1,6 @@
 #!/bin/bash
 
-su - ec2-user <<'EOF'
 cd ~/app-tier
 pm2 start index.js
 pm2 save
-EOF
+pm2 startup systemd -u ec2-user --hp /home/ec2-user
