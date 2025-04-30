@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const os = require('os');
 const fetch = require('node-fetch');
+const initDb = require('./initDb');
 
 const app = express();
 const port = 4000;
@@ -94,6 +95,11 @@ app.get('/transaction/id',(req,res)=>{
     }
 });
 
-  app.listen(port, () => {
+app.listen(port, () => {
     console.log(`AB3 backend app listening at http://localhost:${port}`)
-  })
+})
+  
+// Run DB initialization in background
+initDb().catch((err) => {
+    console.error("Database initialization failed:", err.message);
+});
